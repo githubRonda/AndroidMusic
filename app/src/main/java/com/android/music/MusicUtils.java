@@ -165,6 +165,7 @@ public class MusicUtils {
     }
 
     public static ServiceToken bindToService(Activity context, ServiceConnection callback) {
+        // 若 Activity没有嵌套父Activity的话,则getParent()返回null, 否则就返回父Activity
         Activity realActivity = context.getParent();
         if (realActivity == null) {
             realActivity = context;
